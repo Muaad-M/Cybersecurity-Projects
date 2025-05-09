@@ -1,59 +1,52 @@
-# Overview of Remote Code Execution (RCE) Attack Detection & Response Using PowerShell
+# Overview: PowerShell-Based Remote Code Execution (RCE) Detection & Response Project
 
-This project demonstrates the process of detecting and responding to a Remote Code Execution (RCE) attack using PowerShell, with Microsoft Defender for Endpoint (MDE) configured for monitoring and automated incident response. The attack involves the attacker using PowerShell to download and execute a malicious file (7-Zip installer) on a compromised Windows VM. 
+## Project Summary
 
-The primary objective of the project is to showcase the creation of a custom detection rule, automate incident response actions such as isolating the compromised VM, and performing detailed forensic analysis to investigate the attack. This simulation highlights the importance of proactive detection, rapid response, and continuous monitoring in a Security Operations Centre (SOC) environment.
+In this project, I simulated a PowerShell-based Remote Code Execution (RCE) attack on a Windows 10 virtual machine within Microsoft Azure. The goal was to detect the attack using Microsoft Defender for Endpoint (MDE), respond automatically, and analyse the outcome through forensic investigation.
 
-## Project Purpose & Goals
-
-- **Simulate a Remote Code Execution (RCE) attack** using PowerShell.
-- **Detect and respond** to the attack with Microsoft Defender for Endpoint (MDE).
-- **Create a custom detection rule** to identify malicious PowerShell commands.
-- **Automate incident response actions** like isolating devices and collecting forensic data.
-- **Perform an incident investigation** using collected data to analyse attack vectors.
-
-## Hyperlinks to Sections
-
-- [01 - Environment Setup](./01-Environment-Setup/README.md)
-- [02 - Detection Engineering](./02-Detection-Engineering/README.md)
-- [03 - Attack Simulation](./03-Attack-Simulation/README.md)
-- [04 - Automated Response](./04-Automated-Response/README.md)
-- [05 - Forensic Investigation](./05-Forensic-Investigation/README.md)
-- [06 - Lessons Learned](./06-Lessons-Learned/README.md)
-
-## Summary Table of Skills & Cybersecurity Domains
-
-| Skill/Technology                | Description                                                       | Relevant Cybersecurity Domain       |
-|----------------------------------|-------------------------------------------------------------------|--------------------------------------|
-| **Microsoft Defender for Endpoint (MDE)** | A platform for endpoint protection, threat detection, and automated response. | Endpoint Protection, Threat Detection |
-| **PowerShell**                   | Scripting language used for automating the download and execution of files. | Incident Response, Malware Analysis  |
-| **KQL (Kusto Query Language)**   | Language for querying logs to create custom detection rules.       | Threat Detection, Incident Response |
-| **Windows Virtual Machines**     | Virtualized operating systems used for testing and simulating attacks. | Cloud Security, Endpoint Protection |
-| **Investigation Packages**       | Forensic data gathered to understand the impact of a security event. | Digital Forensics, Incident Response |
-| **Cloud Security (Microsoft Azure)** | Securing cloud-based environments to protect virtual machines and data. | Cloud Security, Endpoint Protection |
-
-## Key Takeaways
-
-- **Custom Detection Rules:** Tailored detection rules improve threat detection capabilities.
-- **Automated Response:** Automating actions like isolating compromised devices accelerates response times and reduces manual effort.
-- **Forensic Analysis:** Detailed investigation packages help in understanding the attack's impact and can guide recovery and future prevention.
-- **SOC Operations:** This project reflects the essential day-to-day tasks of a SOC Analyst, particularly in detecting and responding to advanced threats.
-  
-## Keywords & Tags
-
-- **SOC (Security Operations Centre)**
-- **EDR (Endpoint Detection and Response)**
-- **Cloud Security**
-- **RCE (Remote Code Execution)**
-- **PowerShell Scripting**
-- **Incident Response Automation**
-- **Forensic Analysis**
-- **Threat Detection Rules**
-- **MDE (Microsoft Defender for Endpoint)**
-- **KQL (Kusto Query Language)**
+The simulation involved using PowerShell commands to download and install a potentially malicious application (7-Zip), triggering a custom detection rule in MDE. Upon detection, the compromised device was automatically isolated, and an investigation package was collected for analysis. This project reflected real-world SOC workflows, demonstrating the value of proactive threat detection, automated incident response, and evidence-based forensic review.
 
 ---
 
-This `overview.md` file provides an overview of the project's objectives, skills gained, and useful links to different sections. It's structured to ensure a professional presentation for anyone reviewing the repository, such as recruiters or potential collaborators.
+## Project Sections
 
-Let me know if you'd like to modify or enhance any part of the document!
+- [**2.1 Environment Setup**](2.1-Environment-Setup.md)
+- [**2.2 Detection Engineering**](2.2-Detection-Engineering.md)
+- [**2.3 Attack Simulation**](2.3-Attack-Simulation.md)
+- [**2.4 Automated Response**](2.4-Automated-Response.md)
+- [**2.5 Forensic Investigation**](2.5-Forensic-Investigation.md)
+- [**2.6 Lessons Learned**](2.6-Lessons-Learned.md)
+
+---
+##  Skills Table
+
+| Skill                          | Tools/Technologies                        | Application in Project                                             |
+|-------------------------------|-------------------------------------------|--------------------------------------------------------------------|
+| **Threat Detection**          | Microsoft Defender for Endpoint, KQL      | Created custom KQL detection rules to identify PowerShell-based RCE |
+| **Incident Response**         | MDE, Automation Rules                     | Automated device isolation and collection of forensic evidence     |
+| **Digital Forensics**         | MDE Investigation Packages                | Analysed process trees, event logs, and file/registry activity     |
+| **Cloud Security**            | Microsoft Azure                           | Deployed and managed the Windows VM environment                    |
+| **Scripting & Automation**    | PowerShell                                | Simulated attacker behaviour using command-line scripts            |
+| **Detection Engineering**     | Kusto Query Language (KQL)                | Wrote precise queries targeting malicious PowerShell behaviour     |
+| **Security Operations (SOC)** | MDE Portal, Action Centre                 | Followed SOC processes for alert triage, investigation, and response |
+| **Endpoint Protection**       | Microsoft Defender for Endpoint           | Configured advanced endpoint monitoring and response mechanisms    |
+
+---
+
+
+
+## Summary of Lessons Learned
+
+This project reinforced several key concepts:
+
+- **Proactive Detection Is Essential**: Creating custom rules targeting attacker TTPs (Tactics, Techniques, and Procedures) greatly enhances threat visibility.
+- **Automation Speeds Up Response**: Leveraging automated actions like device isolation and evidence collection drastically reduces response time.
+- **KQL Mastery Adds Defensive Depth**: Understanding how to translate malicious behaviours into queries is critical for modern detection engineering.
+- **Forensics Validates Response**: Analysing forensic data ensures not only that the alert was accurate but also that the response was effective and complete.
+- **Simulations Build Confidence**: Testing detection and response capabilities in a controlled environment mirrors real-world SOC challenges and prepares me for on-the-job scenarios.
+
+---
+
+## Final Thoughts
+
+This hands-on lab project deepened my skills in threat detection, response automation, and forensic analysis using enterprise-grade tools. It closely mirrors the day-to-day responsibilities of a SOC analyst and positions me to contribute to proactive cyber defence efforts in real environments.
